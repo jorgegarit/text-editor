@@ -33,9 +33,20 @@ module.exports = () => {
         name: 'text-editor',
         short_name: 'jate',
         description: 'text editor that uses IndexedDB and can be used offline',
-        
-      })
-      
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        fingerprints: false,
+        inject: true,
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], //this is a range of different sizes
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
 
     module: {
