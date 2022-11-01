@@ -23,7 +23,18 @@ module.exports = () => {
         template: './index.html',
         title: 'JATE', //(Just another text editor)
       }),
-      
+      // this will inject the service worker form src-sw,js
+      new InjectManifest({
+        swSrc: './src-sw.js', //the source for service worker
+        swDest: 'src-sw.js', //the destination name in dist directory
+      }),
+      // manifest.json file
+      new WebpackPwaManifest({
+        name: 'text-editor',
+        short_name: 'jate',
+        description: 'text editor that uses IndexedDB and can be used offline',
+        
+      })
       
     ],
 
