@@ -18,6 +18,12 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // adding the webpack plugin which will be used to inject our bundle into html
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'JATE', //(Just another text editor)
+      }),
+      
       
     ],
 
