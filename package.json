@@ -1,8 +1,8 @@
 {
-  "name": "text-editor",
+  "name": "jate",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "private": "true",
   "scripts": {
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "cd server && node server.js",
@@ -11,23 +11,30 @@
     "install": "cd client && npm install",
     "client": "cd client && npm start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "if-env": "^1.0.4"
-  },
-  "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.4"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jorgegarit/text-editor.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jorgegarit/text-editor/issues"
   },
-  "homepage": "https://github.com/jorgegarit/text-editor#readme"
+  "homepage": "https://github.com/jorgegarit/text-editor#readme",
+  "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "codemirror": "^6.0.1",
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
+    "idb": "^7.1.0",
+    "nodemon": "2.0.20",
+    "rollup": "^3.2.4"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.5.4"
+  }
 }
