@@ -20,4 +20,7 @@ butInstall.addEventListener('click', async () => {
 });
 
 // Handle for when the application is 'appinstalled'
-window.addEventListener('appinstalled', (event) => {});
+window.addEventListener('appinstalled', (event) => {
+    window.deferredPrompt = null;
+    console.log('the app has been installed!');
+});
