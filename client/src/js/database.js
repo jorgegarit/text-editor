@@ -32,12 +32,30 @@ export const putDb = async (content) => {
   // use the put method to update object in the database
   const request = store.put({ jate: content });
 
-  // get confirmation of the put request
+  // get confirmation of the PUT request
   const result = await request;
   console.log('the data has been saved to the databse', result);
 };
 
 // GET function for IndexedDb database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  console.log('GET from the database');
+
+  // create connection to the database and the specific version
+  const jateDb = await openDB('jate', 1);
+
+  // create a new transaction with specified store and data priviledges
+  const tx = jateDb.transaction('jate', 'readonly');
+
+  // open the desired object store
+  const store = tx.objectStore('jate');
+
+  // use the get method to get all the data in the database
+  const request = store.getAll();
+
+  // get confirmation of the GET request
+  const result = await request;
+  console.log('result.value', result);
+};
 
 initdb();
