@@ -8,7 +8,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
-    mode: 'development',
+    mode: 'production',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -58,7 +58,7 @@ module.exports = () => {
         }, 
         // add babel to webpack
         {
-          test: /\.m?js$/,
+          test: /\.m$js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
